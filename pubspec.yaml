@@ -1,0 +1,17 @@
+name: aws_simple_lambda
+description: Simple AWS Lambda
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  aws_lambda_dart_runtime: ^1.1.0
+
+dev_dependencies:
+  build_runner: ^2.1.0
+  lints: ^1.0.0
+  test: ^1.16.0

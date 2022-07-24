@@ -1,0 +1,6 @@
+POST https://lhu3h1wnl0.execute-api.us-east-1.amazonaws.com/dev/add-one
+Content-Type: application/json
+
+{
+  "value": 1
+}

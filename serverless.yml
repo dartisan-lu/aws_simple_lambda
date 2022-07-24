@@ -1,0 +1,21 @@
+service: calculate
+provider:
+  name: aws
+  runtime: dart
+  lambdaHashingVersion: 20201221
+  memorySize: 128
+
+package:
+  individually: true
+
+plugins:
+  - serverless-dart
+
+functions:
+  postRequest:
+    handler: calculate.addOne
+    events:
+      - http:
+          path: /add-one
+          method: POST
+          cors: true
