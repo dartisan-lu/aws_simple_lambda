@@ -5,6 +5,8 @@ import 'post-request/calculate_request.dart';
 void main() async {
 
   Runtime()
-    ..registerHandler<AwsApiGatewayEvent>("calculate.addOne", CalculateRequest().postApiGateway)
+    ..registerHandler<AwsApiGatewayEvent>("calculate.addOnePost", CalculateRequest().addOnePostGateway)
+    ..registerHandler<AwsApiGatewayEvent>("calculate.addOnePath", CalculateRequest().addOnePathGateway)
+    ..registerHandler<AwsApiGatewayEvent>("calculate.addOneQuery", CalculateRequest().addOneQueryGateway)
     ..invoke();
 }

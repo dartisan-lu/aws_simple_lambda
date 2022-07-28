@@ -1,0 +1,7 @@
+OPTIONS https://XXXXXXXXXXXX.execute-api.eu-west-1.amazonaws.com/dev/add-one-path/1
+Content-Type: application/json
+
+###
+
+GET https://XXXXXXXXXXXX.execute-api.eu-west-1.amazonaws.com/dev/add-one-path/1
+Content-Type: application/json

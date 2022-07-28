@@ -27,6 +27,16 @@ $ npx serverless install \
   --name hello
 ```
 
+CORS: 
+
+When accessing the Lambda Function from a Web Browser, you need to define the CORS Header, in this case from a Static Website stored on the AWS S3.
+```
+ "Content-Type": "application/json",
+ "Access-Control-Allow-Origin": "http://dartisan.s3-website-eu-west-1.amazonaws.com",
+ "Access-Control-Allow-Methods": "GET, PUT, PATCH, POST, DELETE, OPTIONS",
+ "Access-Control-Allow-Credentials": "true",
+```
+
 Also the tool is used to deploy and remove your function from AWS (see Makefile):
 
 ```
@@ -60,14 +70,15 @@ Deploying and removing services need an AWS Token (NEVER share or commit Tokens 
 
 ## Problems encounter:
 
-Flutter error:
-In case you clicking on the "Add" Button, and receive the following error:
+When you try to access from your local PC to the AWS Lambda Function with the browser, CORS will block it with the message:
+
 ```
 Error: XMLHttpRequest error.
 dart-sdk/lib/_internal/js_dev_runtime/patch/core_patch.dart 963:28                get current
 packages/http/src/browser_client.dart 69:22                                       <fn>
 ```
-you may need to deactivate the security:
+
+You may need to deactivate the security :
 
 1. Stop all running applications
 2. Go to flutter\bin\cache and remove a file named: flutter_tools.stamp

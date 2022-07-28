@@ -14,9 +14,16 @@ void main() {
     Context context = Context(handler:"handler" ,requestId: "requestId");
     AwsApiGatewayEvent event = AwsApiGatewayEvent(body: CalculateRequestModel.toJsonString(request));
 
-    var result = await CalculateRequest().postApiGateway(context, event);
+    var result = await CalculateRequest().addOnePostGateway(context, event);
     var rtn = CalculateResponseModel.fromJsonString(result.body);
 
     expect(rtn.value, equals(2));
+  });
+
+  test('uri', () async {
+
+    var url = Uri.parse('https://XXXXXXXXXXXX.execute-api.eu-west-1.amazonaws.com/dev/add-one?value=1');
+    var value = int.parse(url.queryParameters['value']);
+    print(value);
   });
 }

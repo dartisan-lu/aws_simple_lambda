@@ -4,6 +4,7 @@ provider:
   runtime: dart
   lambdaHashingVersion: 20201221
   memorySize: 128
+  region: eu-west-1
 
 package:
   individually: true
@@ -13,9 +14,23 @@ plugins:
 
 functions:
   postRequest:
-    handler: calculate.addOne
+    handler: calculate.addOnePost
+    events:
+      - http:
+          path: /add-one-post
+          method: POST
+          cors: true
+  getRequestPath:
+    handler: calculate.addOnePath
+    events:
+      - http:
+          path: /add-one-path/{value}
+          method: GET
+          cors: true
+  getRequestQuery:
+    handler: calculate.addOneQuery
     events:
       - http:
           path: /add-one
-          method: POST
+          method: GET
           cors: true

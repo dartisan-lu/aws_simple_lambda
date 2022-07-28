@@ -5,7 +5,7 @@ class CalculateResponseModel {
     this.value,
   });
 
-  int value;
+  dynamic value;
 
   factory CalculateResponseModel.fromJson(Map<String, dynamic> json) => CalculateResponseModel(
         value: json["value"],
