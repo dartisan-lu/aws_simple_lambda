@@ -1,0 +1,6 @@
+AmazonS3FullAccess
+CloudWatchLogsFullAccess
+AWSWAFFullAccess
+AdministratorAccess-Amplify
+AWSCloudFormationFullAccess
+AWSLambda_FullAccess
